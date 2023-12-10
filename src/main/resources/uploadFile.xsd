@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://canamocha.com/projects/fileUpload/model" xmlns:tns="http://canamocha.com/projects/fileUpload" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="uploadFileRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="inputText" nillable="false" />
+				<xs:element name="file">
+					<xs:simpleType>
+						<xs:restriction base="xs:base64Binary">
+							<xs:maxLength value="1000000000" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="uploadFileResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="outputText" nillable="false" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
